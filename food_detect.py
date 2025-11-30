@@ -6,11 +6,11 @@ import requests
 import torch
 
 # Загрузка модели детекции объектов
-from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection
+from transformers import Owlv2Processor, Owlv2ForObjectDetection
 
-processor = AutoProcessor.from_pretrained("google/owlv2-base-patch16-ensemble")
-model = AutoModelForZeroShotObjectDetection.from_pretrained("google/owlv2-base-patch16-ensemble")
 
+processor = Owlv2Processor.from_pretrained("./tensors/AI_For_Segmentation")
+model = Owlv2ForObjectDetection.from_pretrained("./tensors/AI_For_Segmentation")
 
 # Функция для обнаружения еды на картинке
 def food_detection(url):
@@ -21,7 +21,8 @@ def food_detection(url):
     "milk", "eggs", "butter", "cheese", "yogurt", "cream", "sour cream", "cottage cheese",
     "chicken", "beef", "pork", "fish", "shrimp", "sausage", "bacon", "ham",
     "bread", "baguette", "tortilla", "pasta", "rice", "oats", "flour", "noodles",
-    "potato", "onion", "garlic", "carrot", "tomato", "cucumber", "pepper", "cabbage"
+    "potato", "onion", "garlic", "carrot", "tomato", "cucumber", "pepper", "cabbage",
+    "banana", "coconut"
   ]
 
   image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
