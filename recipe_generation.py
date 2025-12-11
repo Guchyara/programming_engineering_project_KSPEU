@@ -10,6 +10,13 @@ import tempfile
 #     filename="gemma-3-4b-it-BF16.gguf",
 # )
 
+
+model_url = "https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q2_K.gguf"
+save_to = "./tensors/gemma-3-4b-it-qat-Q2_K.gguf"
+
+download_model(model_url, save_to)
+
+
 llm = Llama(
     model_path="./tensors/gemma-3-4b-it-qat-Q2_K.gguf",
     n_ctx=4096,
