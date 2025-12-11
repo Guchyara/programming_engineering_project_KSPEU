@@ -4,10 +4,15 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import requests
 import torch
+from download_models import download_model
 
 # Загрузка модели детекции объектов
 from transformers import Owlv2Processor, Owlv2ForObjectDetection
 
+model_url = "https://huggingface.co/google/owlv2-base-patch16-ensemble/blob/main/model.safetensors"
+save_to = "./tensors/AI_For_Segmentation"
+
+download_model(model_url, save_to)
 
 processor = Owlv2Processor.from_pretrained("./tensors/AI_For_Segmentation")
 model = Owlv2ForObjectDetection.from_pretrained("./tensors/AI_For_Segmentation")
