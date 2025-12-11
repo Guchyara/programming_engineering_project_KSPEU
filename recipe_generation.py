@@ -4,6 +4,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import tempfile
+from download_models import download_model
 
 # llm = Llama.from_pretrained(
 #     repo_id="unsloth/gemma-3-4b-it-GGUF",
