@@ -17,7 +17,7 @@ from backend import generate_recipe_core
 model_url = "https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q2_K.gguf"
 save_to = "./tensors/gemma-3-4b-it-qat-Q2_K.gguf"
 
-# download_model(model_url, save_to)
+download_model(model_url, save_to)
 
 
 llm = Llama(

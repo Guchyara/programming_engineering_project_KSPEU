@@ -12,7 +12,7 @@ from transformers import Owlv2Processor, Owlv2ForObjectDetection
 model_url = "https://huggingface.co/google/owlv2-base-patch16-ensemble/resolve/main/model.safetensors"
 save_to = "./tensors/AI_For_Segmentation/model.safetensors"
 
-# download_model(model_url, save_to)
+download_model(model_url, save_to)
 
 processor = Owlv2Processor.from_pretrained("./tensors/AI_For_Segmentation")
 model = Owlv2ForObjectDetection.from_pretrained("./tensors/AI_For_Segmentation")
